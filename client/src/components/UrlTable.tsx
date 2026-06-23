@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import type { Url } from '../types';
 import { buildShortUrl, formatDate, truncateUrl, copyToClipboard, isExpired } from '../utils/helpers';
 import { SkeletonRow } from './Loaders';
@@ -15,7 +14,7 @@ interface UrlTableProps {
 }
 
 export const UrlTable: React.FC<UrlTableProps> = ({ urls, loading, onDelete, onUpdate, onCopied }) => {
-  const navigate = useNavigate();
+  
   const [qrUrl, setQrUrl] = useState<{ url: string; code: string } | null>(null);
   const [editUrl, setEditUrl] = useState<Url | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);

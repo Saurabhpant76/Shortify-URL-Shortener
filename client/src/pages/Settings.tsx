@@ -13,7 +13,7 @@ const Settings: React.FC = () => {
 
   //  NEW: Avatar State and Ref
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
-  const [avatarFile, setAvatarFile] = useState<File | null>(null); // Use this to send to your backend
+ 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Form States
@@ -48,7 +48,7 @@ const Settings: React.FC = () => {
       // Create a local URL for immediate preview
       const previewUrl = URL.createObjectURL(file);
       setAvatarPreview(previewUrl);
-      setAvatarFile(file); // Store the actual file for API submission
+      // Store the actual file for API submission
     }
   };
 
